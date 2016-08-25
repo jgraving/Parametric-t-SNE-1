@@ -1,8 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Aug 23 10:27:56 2016
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-@author: paoloinglese
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+@author: paolo
 """
 
 
@@ -23,7 +34,7 @@ def train_par_tsne(train_X, train_labels, layers, training='CD1'):
            if i != no_layers-1:
                
                if training == 'CD1':
-                   curr_rbm,_ =train_rbm(train_X, layers[i], 0.1, 30))
+                   curr_rbm,_ =train_rbm(train_X, layers[i], 0.1, 30)
                elif training == 'PCD':
                    curr_rbm,_=train_rbm_pcd(train_X, layers[i])
                elif training == 'None':
@@ -50,4 +61,3 @@ def train_par_tsne(train_X, train_labels, layers, training='CD1'):
            
        network, err = tsne_backprop(network, origX, train_labels, 30, 30, 1)
        return network,err
-

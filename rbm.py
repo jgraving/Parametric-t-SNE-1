@@ -1,11 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Aug 23 09:14:10 2016
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 @author: paolo
 """
 
-import timeit
 import numpy as np
 from scipy.special import expit
 
@@ -54,8 +64,6 @@ def train_rbm(X, h=30, eta=0.1, max_iter=30, weight_cost=0.0002):
     train_err=np.zeros(max_iter)
     for i in range(max_iter):
         
-        start_time=timeit.default_timer()        
-        
         ind=np.random.permutation(n)
         
         if i < 5:
@@ -88,9 +96,6 @@ def train_rbm(X, h=30, eta=0.1, max_iter=30, weight_cost=0.0002):
         
         err_tmp=compute_recon_err(machine,X)
         print "Iteration %d (train rec. error = %f)" % (i,err_tmp)
-        
-        print timeit.default_timer() - start_time
-        
         train_err[i]=err_tmp
     
     print " "
@@ -152,13 +157,4 @@ def train_linear_rbm(X, h=20, eta=0.001, max_iter=50, weight_cost=0.0002):
         
         print "Iteration %d (train rec. error ~ %f)" % (i,err/n)
     
-    return machine         
-    
-
-#from scipy.io import loadmat
-#
-#train_mnist = loadmat('/home/paolo/source-test/parametric_tsne/mnist_test.mat')
-#train_X = train_mnist['test_X']
-#train_labels = train_mnist['test_labels']
-#layers=[250,50,2]
-#train_rbm(train_X,layers[0],0.01,3)
+    return machine
