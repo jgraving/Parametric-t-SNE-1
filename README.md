@@ -1,5 +1,5 @@
 # Parametric-t-SNE
-A Python porting of the [parametric t-SNE algorithm](http://www.jmlr.org/proceedings/papers/v5/maaten09a/maaten09a.pdf)
+A Python 2 porting of the [parametric t-SNE algorithm](http://www.jmlr.org/proceedings/papers/v5/maaten09a/maaten09a.pdf)
 
 
 To launch the experiment on MNIST data:
@@ -7,7 +7,7 @@ To launch the experiment on MNIST data:
 `python parametric_tsne_MNIST.py`
 
 
-*Please report bugs*
+*Please report bugs. Enjoy!*
 
 ---
 
